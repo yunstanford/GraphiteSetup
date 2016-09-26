@@ -172,7 +172,7 @@ Shutdown all daemon instances, do
 Both run.sh and shutdown.sh should be consistent with the configuration in carbon.conf.
 
 # Start Webapp
-If you install everything in default location (/opt/graphite), then
+If you install everything in default location '/opt/graphite', then
 ```bash
 python /opt/graphite/bin/run-graphite-devel-server.py /opt/graphite
 
@@ -198,7 +198,7 @@ echo "test.foo 7 `date +%s`" | nc localhost 2003
 <!-- find path to whisper-fetch.py -->
 which whisper-fetch.py
 <!-- check data in whisper file -->
-whisper-fetch.py test/foo.wsp | tail 5
+whisper-fetch.py test/foo.wsp | tail -5
 ```
 
 If you wanna send large volume of data for testing, try:
