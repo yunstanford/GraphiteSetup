@@ -1,0 +1,2 @@
+# GraphiteSetup
+Simple Setup Documentation
