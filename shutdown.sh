@@ -5,7 +5,7 @@ RELAY_INSTANCES_NUM=2
 NAMING_FORMATE="l"
 
 # "/opt/graphite/bin/"
-SCRIPT_PATH="/Users/yunx/Documents/PROJECTS/graphite/bin"
+SCRIPT_PATH="PATH/TO/SCRIPT"
 
 echo "[INFO] ===== Shutting down Graphite ===== "
 

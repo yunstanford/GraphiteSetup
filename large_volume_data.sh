@@ -4,7 +4,7 @@ PROCESS_NUM=$1
 METRIC_NUM_FOR_ONE_PROCESS=$2
 
 # Send Data to METRIC
-SCRIPT_PATH="/Users/yunx/Documents/PROJECTS/graphite/bin"
+SCRIPT_PATH="PATH/TO/SCRIPT"
 for i in `seq 1 $PROCESS_NUM`
 do
 	MIN_METRIC=$(( ($i - 1) * $METRIC_NUM_FOR_ONE_PROCESS + 1 ))
