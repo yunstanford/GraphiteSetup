@@ -154,14 +154,61 @@ python carbon_cache.py start -l 8
 ```
 
 # Packaging it up
+Packaging up all daemon instances including carbon-relay and carbon-cache instances. Write simple script
+do the packaging for you.
 
+Start all daemon instances, simply do
+```bash
+<!-- For details, see run.sh -->
+/opt/graphite/bin/run.sh
+```
+
+Shutdown all daemon instances, do
+```bash
+<!-- For details, see shutdown.sh -->
+/opt/graphite/bin/shutdown.sh
+```
+
+Both run.sh and shutdown.sh should be consistent with the configuration in carbon.conf.
 
 # Start Webapp
+If you install everything in default location (/opt/graphite), then
+```bash
+python /opt/graphite/bin/run-graphite-devel-server.py /opt/graphite
+
+```
+If you install everything in a customer location '/srv/graphite', then
+```bash
+python /srv/graphite/bin/run-graphite-devel-server.py /srv/graphite
+```
+Then, you can check
+```
+http://localhost:8080
+```
 
 
 # Simple Check
+## Feeding data to carbon
+```bash
+echo "test.foo 7 `date +%s`" | nc localhost 2003
+```
+
+## Check Whisper file for consistency
+```bash
+<!-- find path to whisper-fetch.py -->
+which whisper-fetch.py
+<!-- check data in whisper file -->
+whisper-fetch.py test/foo.wsp | tail 5
+```
+
+If you wanna send large volume of data for testing, try:
+```bash
+<!-- For details, see large_volume_data.sh -->
+large_volume_data.sh 10 100
+```
+It spawns 10 processes and each process send data to 100 different metric every 60 seconds by default.
 
 
 # Reference
 - http://graphite.readthedocs.io/
-
+- https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
