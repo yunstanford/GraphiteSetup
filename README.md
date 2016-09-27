@@ -1,5 +1,5 @@
 # GraphiteSetup
-Simple Graphite Setup Documentation
+A simple Graphite setup documentation
 
 # Install Graphite
 You can choose to install Graphite in the default location (/opt/graphite/) or a Custom Location
