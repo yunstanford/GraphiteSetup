@@ -118,6 +118,11 @@ Start a single Carbon-Relay instance.
 <!-- For example, start carbon-relay instance a -->
 carbon-relay.py --instance=a start
 ```
+To stop, do
+```bash
+<!-- For example, stop carbon-relay instance a -->
+carbon-relay.py --instance=a stop
+```
 
 We can also start all instances at once.
 If you are using numbers to distinguish between instances (1, 2, 3, etc.), 
@@ -132,6 +137,12 @@ then you can write a simple script to do it for you.
 <!-- For details, see carbon_relay.py -->
 python carbon_relay.py start -l 8
 ```
+To stop, do
+```bash
+<!-- python $SCRIPT_PATH/carbon_relay.py stop $NAMING_FORMATE $RELAY_INSTANCES_NUM  -->
+<!-- For details, see carbon_relay.py -->
+python carbon_relay.py stop -l 8
+```
 
 # Start Carbon-Cache
 Start a single Carbon-Cache instance.
@@ -139,6 +150,12 @@ Start a single Carbon-Cache instance.
 <!-- For example, start carbon-cache instance a -->
 carbon-cache.py --instance=a start
 ```
+To stop, do
+```bash
+<!-- For example, stop carbon-cache instance a -->
+carbon-cache.py --instance=a stop
+```
+
 We can also start all instances at once.
 If you are using numbers to distinguish between instances (1, 2, 3, etc.), 
 then you can simply do
@@ -151,6 +168,12 @@ then you can write a simple script to do it for you.
 <!-- python $SCRIPT_PATH/carbon_cache.py start $NAMING_FORMATE $RELAY_INSTANCES_NUM  -->
 <!-- For details, see carbon_relay.py -->
 python carbon_cache.py start -l 8
+```
+To stop, do
+```bash
+<!-- python $SCRIPT_PATH/carbon_cache.py stop $NAMING_FORMATE $RELAY_INSTANCES_NUM  -->
+<!-- For details, see carbon_relay.py -->
+python carbon_cache.py stop -l 8
 ```
 
 # Packaging it up
@@ -207,6 +230,12 @@ If you wanna send large volume of data for testing, try:
 large_volume_data.sh 10 100
 ```
 It spawns 10 processes and each process send data to 100 different metric every 60 seconds by default.
+
+To stop feeding data, do
+```bash
+<!-- For details, see stop_feeding_data.sh -->
+stop_feeding_data.sh
+```
 
 
 # Reference
