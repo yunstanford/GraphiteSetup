@@ -130,6 +130,10 @@ then you can simply do
 ```bash
 for i in `seq 8`; do sudo -E carbon-relay.py --instance=${i} start; done
 ```
+To stop, do
+```bash
+for i in `seq 8`; do sudo -E carbon-relay.py --instance=${i} stop; done
+```
 If you are using letters to distingusish between instances (a, b, c, etc.),
 then you can write a simple script to do it for you.
 ```bash
@@ -161,6 +165,10 @@ If you are using numbers to distinguish between instances (1, 2, 3, etc.),
 then you can simply do
 ```bash
 for i in `seq 8`; do sudo -E carbon-cache.py --instance=${i} start; done
+```
+To stop, do
+```bash
+for i in `seq 8`; do sudo -E carbon-cache.py --instance=${i} stop; done
 ```
 If you are using letters to distingusish between instances (a, b, c, etc.),
 then you can write a simple script to do it for you.
