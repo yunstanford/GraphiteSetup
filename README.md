@@ -32,7 +32,7 @@ brew install py2cairo
 
 
 ## Django
-We need to stick to django 1.5.
+We need to stick to django 1.5 or 1.9.
 ``` bash
 pip install Django==1.5
 ```
