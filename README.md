@@ -39,7 +39,10 @@ pip install Django==1.5
 If you are running Graphite under django development server and getting "ImportError: No module named fields",
 then try
 ``` bash
+<!-- For django 1.5 -->
 pip install django-tagging==0.3.6
+<!-- For django 1.9 -->
+pip install django-tagging==0.4.3
 ```
 
 
