@@ -44,6 +44,9 @@ pip install django-tagging==0.3.6
 <!-- For django 1.9 -->
 pip install django-tagging==0.4.3
 ```
+## Other dependencies
+Checkout here
+- https://graphite.readthedocs.io/en/latest/install.html#dependencies
 
 
 # Graphite Configuration
