@@ -32,7 +32,7 @@ brew install py2cairo
 
 
 ## Django
-We need to stick to django 1.5 or 1.9.
+We need to stick to django 1.5.
 ``` bash
 pip install Django==1.5
 ```
@@ -41,8 +41,6 @@ then try
 ``` bash
 <!-- For django 1.5 -->
 pip install django-tagging==0.3.6
-<!-- For django 1.9 -->
-pip install django-tagging==0.4.3
 ```
 ## Other dependencies
 Checkout here
