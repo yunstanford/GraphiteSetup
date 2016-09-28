@@ -101,6 +101,9 @@ For mysql users, here is a simple reference to create a user and grant all privi
 <!-- Install mysql -->
 brew install mysql
 
+<!-- Start mysql server -->
+mysqld_safe
+
 <!-- Log in to mysql -->
 mysql -u root
 
