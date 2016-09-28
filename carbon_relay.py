@@ -5,12 +5,12 @@ import os
 
 def start_carbon_relay_instance(name):
 	path = os.path.realpath(__file__)
-	subprocess.call(["{0}/carbon-relay.py".format(os.path.dirname(path)), "--instance={0}".format(name), "start"])
+	subprocess.call(["python", "{0}/carbon-relay.py".format(os.path.dirname(path)), "--instance={0}".format(name), "start"])
 
 
 def stop_carbon_relay_instance(name):
 	path = os.path.realpath(__file__)
-	subprocess.call(["{0}/carbon-relay.py".format(os.path.dirname(path)), "--instance={0}".format(name), "stop"])	
+	subprocess.call(["python", "{0}/carbon-relay.py".format(os.path.dirname(path)), "--instance={0}".format(name), "stop"])	
 
 
 def usage():

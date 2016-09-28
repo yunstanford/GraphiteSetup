@@ -5,12 +5,12 @@ import os
 
 def start_carbon_cache_instance(name):
 	path = os.path.realpath(__file__)
-	subprocess.call(["{0}/carbon-cache.py".format(os.path.dirname(path)), "--instance={0}".format(name), "start"])
+	subprocess.call(["python", "{0}/carbon-cache.py".format(os.path.dirname(path)), "--instance={0}".format(name), "start"])
 
 
 def stop_carbon_cache_instance(name):
 	path = os.path.realpath(__file__)
-	subprocess.call(["{0}/carbon-cache.py".format(os.path.dirname(path)), "--instance={0}".format(name), "stop"])	
+	subprocess.call(["python", "{0}/carbon-cache.py".format(os.path.dirname(path)), "--instance={0}".format(name), "stop"])	
 
 
 def usage():
