@@ -5,7 +5,9 @@ RELAY_INSTANCES_NUM=2
 NAMING_FORMATE="l"
 
 # "/opt/graphite/bin/"
-SCRIPT_PATH="PATH/TO/SCRIPT"
+pushd `dirname $0` > /dev/null
+SCRIPT_PATH=$(pwd)
+
 
 echo "[INFO] ===== Shutting down Graphite ===== "
 
