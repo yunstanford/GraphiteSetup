@@ -193,17 +193,17 @@ do the packaging for you.
 
 Start all daemon instances, simply do
 ```bash
-<!-- For details, see run.sh -->
-/opt/graphite/bin/run.sh
+<!-- For details, see run -->
+/opt/graphite/bin/run
 ```
 
 Shutdown all daemon instances, do
 ```bash
-<!-- For details, see shutdown.sh -->
-/opt/graphite/bin/shutdown.sh
+<!-- For details, see shutdown -->
+/opt/graphite/bin/shutdown
 ```
 
-Both run.sh and shutdown.sh should be consistent with the configuration in carbon.conf.
+Both run and shutdown should be consistent with the configuration in carbon.conf.
 
 # Start Webapp
 If you install everything in default location '/opt/graphite', then
