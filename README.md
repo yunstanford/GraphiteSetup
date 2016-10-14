@@ -118,6 +118,7 @@ Remember, setting up a new database requires running the command below to create
 PYTHONPATH=$GRAPHITE_ROOT/webapp django-admin.py migrate --settings=graphite.settings --run-syncdb
 python /opt/grahite/webapp/graphite/manage.py migrate
 ```
+If migrate doesn't work for you, then use syncdb instead.
 
 # Start Carbon-Relay
 Start a single Carbon-Relay instance.
