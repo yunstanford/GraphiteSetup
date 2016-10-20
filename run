@@ -18,6 +18,7 @@ echo "[INFO] == Starting Carbon-Relay-NG =="
 
 #python $SCRIPT_PATH/carbon_relay.py start $NAMING_FORMATE $RELAY_INSTANCES_NUM 
 #$SCRIPT_PATH/carbon_relay.py start $NAMING_FORMATE $RELAY_INSTANCES_NUM 
+
 $SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng.ini
 
 echo "[INFO] == Carbon-Relay Started =="
