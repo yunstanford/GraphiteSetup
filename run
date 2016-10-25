@@ -1,7 +1,6 @@
 #!/bin/bash
 
 CACHE_INSTANCES_NUM=8
-RELAY_INSTANCES_NUM=0
 NAMING_FORMATE="l"
 
 
@@ -16,12 +15,8 @@ echo "[INFO] ===== Starting Graphite ===== "
 
 echo "[INFO] == Starting Carbon-Relay-NG =="
 
-#python $SCRIPT_PATH/carbon_relay.py start $NAMING_FORMATE $RELAY_INSTANCES_NUM 
-#$SCRIPT_PATH/carbon_relay.py start $NAMING_FORMATE $RELAY_INSTANCES_NUM 
-
-$SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng-1.ini > stdoutfile-1 2> stderrfile-1 &
-$SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng-2.ini > stdoutfile-2 2> stderrfile-2 &
-
+$SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng-1.ini > carbon-relay-ng-1-stdout 2> carbon-relay-ng-1-stderr &
+$SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng-2.ini > carbon-relay-ng-2-stdout 2> carbon-relay-ng-2-stderr &
 
 echo "[INFO] == Carbon-Relay Started =="
 
