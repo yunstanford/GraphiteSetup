@@ -7,8 +7,8 @@ NAMING_FORMATE="l"
 # "/opt/graphite/bin/"
 pushd `dirname $0` > /dev/null
 SCRIPT_PATH=$(pwd)
-PARENT_SCRIPT_FOLDER=${PWD%/*}
-CONFIG_FOLDER=$PARENT_SCRIPT_FOLDER/conf_default/config
+# PARENT_SCRIPT_FOLDER=${PWD%/*}
+# CONFIG_FOLDER=$PARENT_SCRIPT_FOLDER/conf_default/config
 
 echo "[INFO] ===== Starting Graphite ===== "
 
