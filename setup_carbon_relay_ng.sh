@@ -4,6 +4,10 @@ mkdir -p /tmp/carbon-relay-ng/spool
 #export GOROOT=$GOROOT
 #export PATH="$PATH:$GOROOT/bin"
 
+echo $GOROOT
+echo $PATH
+echo $SCRIPT_PATH
+
 echo "[INFO] ===== Cloning carbon-relay-ng ===== "
 go get -d github.com/graphite-ng/carbon-relay-ng
 echo "[INFO] ===== Cloning go-bindata ===== "
