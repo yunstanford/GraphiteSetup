@@ -1,3 +1,4 @@
+echo "INSIDE SETUP CARBON RELAY NG SCRIPT"
 SCRIPT_PATH=$(pwd)
 #mkdir -p $GOROOT
 mkdir -p /tmp/carbon-relay-ng/spool
