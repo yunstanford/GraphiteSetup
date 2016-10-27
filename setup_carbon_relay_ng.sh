@@ -1,9 +1,14 @@
 echo "INSIDE SETUP CARBON RELAY NG SCRIPT"
 SCRIPT_PATH=$(pwd)
 
-export GOPATH=$WORKSPACE/gocode
-export GOROOT=$WORKSPACE/go
+echo $SCRIPT_PATH
+echo "Where go tools are there"
+export GOPATH=$SCRIPT_PATH/gocode
+echo "Where go is installed"
+export GOROOT=$SCRIPT_PATH/go
+echo "include executables in the path"
 export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH/bin
 
 echo $WORKSPACE
 echo $GOPATH
@@ -11,6 +16,7 @@ echo $SCRIPT_PATH
 echo $GOROOT
 echo $PATH
 
+mkdir -p $GOPATH
 mkdir -p $GOPATH
 mkdir -p /tmp/carbon-relay-ng/spool
 #export GOPATH=$GOPATH
