@@ -2,11 +2,11 @@ SCRIPT_PATH=$(pwd)
 
 go version
 if [ $? != 0 ]; then
+  echo "[INFO] ===== Installing Golang for Linux. If MAC please install manually ===== "
   curl -LOk https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz
-  
   tar xf go1.7.3.linux-amd64.tar.gz
   
-  echo "GOROOT: where go is installed"
+  echo "[INFO] ===== GOROOT: where go is installed ===== "
   export GOROOT=$SCRIPT_PATH/go
   export PATH=$PATH:$GOROOT/bin
   
@@ -14,17 +14,17 @@ if [ $? != 0 ]; then
 fi
 
 
-echo "INSIDE SETUP CARBON RELAY NG SCRIPT"
+echo "[INFO] ===== INSIDE SETUP CARBON RELAY NG SCRIPT ===== "
 SCRIPT_PATH=$(pwd)
 echo $SCRIPT_PATH
 
 echo $SCRIPT_PATH
-echo "GOPATH: where go tools are there"
+echo "[INFO] ===== GOPATH: where go tools are there ===== "
 export GOPATH=$SCRIPT_PATH/gocode
 echo $GOPATH
 
 
-echo "include executables in the path"
+echo "[INFO] ===== include executables in the path ===== "
 export PATH=$PATH:$GOPATH/bin
 echo $PATH
 
