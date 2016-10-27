@@ -1,3 +1,5 @@
+SCRIPT_PATH=$(pwd)
+
 go version
 
 if [ $? != 0 ]
