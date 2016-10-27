@@ -1,25 +1,25 @@
 #!/bin/bash
 
 CACHE_INSTANCES_NUM=8
-RELAY_INSTANCES_NUM=2
+#RELAY_INSTANCES_NUM=2
 NAMING_FORMATE="l"
 
 # "/opt/graphite/bin/"
 pushd `dirname $0` > /dev/null
 SCRIPT_PATH=$(pwd)
-# PARENT_SCRIPT_FOLDER=${PWD%/*}
-# CONFIG_FOLDER=$PARENT_SCRIPT_FOLDER/conf_default/config
+PARENT_SCRIPT_FOLDER=${PWD%/*}
+CONFIG_FOLDER=$PARENT_SCRIPT_FOLDER/conf_default/config
 
 echo "[INFO] ===== Starting Graphite ===== "
 
-# echo "[INFO] == Starting Carbon-Relay-NG =="
+echo "[INFO] == Starting Carbon-Relay-NG =="
 
-# $SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng-1.ini > carbon-relay-ng-1-stdout 2> carbon-relay-ng-1-stderr &
-# $SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng-2.ini > carbon-relay-ng-2-stdout 2> carbon-relay-ng-2-stderr &
+$SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng-1.ini > carbon-relay-ng-1-stdout 2> carbon-relay-ng-1-stderr &
+$SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng-2.ini > carbon-relay-ng-2-stdout 2> carbon-relay-ng-2-stderr &
 
-echo "[INFO] == Starting Carbon-Relay =="
+#echo "[INFO] == Starting Carbon-Relay =="
 
-python $SCRIPT_PATH/carbon_relay.py start $NAMING_FORMATE $RELAY_INSTANCES_NUM 
+#python $SCRIPT_PATH/carbon_relay.py start $NAMING_FORMATE $RELAY_INSTANCES_NUM 
 
 echo "[INFO] == Carbon-Relay Started =="
 
