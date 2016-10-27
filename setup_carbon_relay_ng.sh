@@ -1,3 +1,12 @@
+go_version=go1.7.3.linux-amd64
+
+if [ ! -e $go_version.tar.gz ]
+then
+   wget https://storage.googleapis.com/golang/$go_version.tar.gz
+   tar xf $go_version.tar.gz
+fi
+
+
 echo "INSIDE SETUP CARBON RELAY NG SCRIPT"
 SCRIPT_PATH=$(pwd)
 echo $SCRIPT_PATH
