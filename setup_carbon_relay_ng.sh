@@ -1,14 +1,16 @@
 echo "INSIDE SETUP CARBON RELAY NG SCRIPT"
 SCRIPT_PATH=$(pwd)
 
+echo $GOPATH
+echo $PATH
+echo $SCRIPT_PATH
+
 mkdir -p $GOPATH
 mkdir -p /tmp/carbon-relay-ng/spool
 #export GOPATH=$GOPATH
 #export PATH="$PATH:$GOPATH/bin"
 
-echo $GOPATH
-echo $PATH
-echo $SCRIPT_PATH
+
 
 echo "[INFO] ===== Cloning carbon-relay-ng ===== "
 go get -d github.com/graphite-ng/carbon-relay-ng
