@@ -3,7 +3,7 @@ go version
 if [ $? != 0 ]
 then
 wget https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz
-tar xf $go_version.tar.gz
+tar xf go1.7.3.linux-amd64.tar.gz
 
 echo "GOROOT: where go is installed"
 export GOROOT=$SCRIPT_PATH/go
