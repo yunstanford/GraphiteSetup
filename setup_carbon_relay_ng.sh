@@ -1,17 +1,16 @@
 SCRIPT_PATH=$(pwd)
 
 go version
-
-if [ $? != 0 ]
-then
-curl -LOk https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz
-tar xf go1.7.3.linux-amd64.tar.gz
-
-echo "GOROOT: where go is installed"
-export GOROOT=$SCRIPT_PATH/go
-export PATH=$PATH:$GOROOT/bin
-
-echo $GOROOT
+if [ $? != 0 ]; then
+  curl -LOk https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz
+  
+  tar xf go1.7.3.linux-amd64.tar.gz
+  
+  echo "GOROOT: where go is installed"
+  export GOROOT=$SCRIPT_PATH/go
+  export PATH=$PATH:$GOROOT/bin
+  
+  echo $GOROOT
 fi
 
 
