@@ -13,9 +13,9 @@ echo "[INFO] ===== Shutting down Graphite ===== "
 
 echo "[INFO] == Shutting down Carbon-Relay instances =="
 
-# kill $(ps aux | grep 'carbon-relay-ng' | awk '{print $2}')
+kill $(ps aux | grep 'carbon-relay-ng' | awk '{print $2}')
 
-python $SCRIPT_PATH/carbon_relay.py stop $NAMING_FORMATE $RELAY_INSTANCES_NUM 
+#python $SCRIPT_PATH/carbon_relay.py stop $NAMING_FORMATE $RELAY_INSTANCES_NUM 
 
 echo "[INFO] == Carbon-Relay stopped =="
 
