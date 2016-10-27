@@ -1,9 +1,15 @@
-go_version=go1.7.3.linux-amd64
+go version
 
-if [ ! -e $go_version.tar.gz ]
+if [ $? != 0 ]
 then
-   wget https://storage.googleapis.com/golang/$go_version.tar.gz
-   tar xf $go_version.tar.gz
+wget https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz
+tar xf $go_version.tar.gz
+
+echo "GOROOT: where go is installed"
+export GOROOT=$SCRIPT_PATH/go
+export PATH=$PATH:$GOROOT/bin
+
+echo $GOROOT
 fi
 
 
@@ -12,22 +18,18 @@ SCRIPT_PATH=$(pwd)
 echo $SCRIPT_PATH
 
 echo $SCRIPT_PATH
-echo "Where go tools are there"
+echo "GOPATH: where go tools are there"
 export GOPATH=$SCRIPT_PATH/gocode
 echo $GOPATH
-echo "Where go is installed"
-export GOROOT=$SCRIPT_PATH/go
-echo $GOROOT
+
+
 echo "include executables in the path"
-export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
+echo $PATH
+
 
 mkdir -p $GOPATH
-mkdir -p $GOROOT
 mkdir -p /tmp/carbon-relay-ng/spool
-#export GOPATH=$GOPATH
-#export PATH="$PATH:$GOPATH/bin"
-
 
 
 echo "[INFO] ===== Cloning carbon-relay-ng ===== "
