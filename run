@@ -10,7 +10,7 @@ export GRAPHITE_STORAGE_DIR=/opt/zillow/app_data/zillow-graphite/storage
 pushd `dirname $0` > /dev/null
 SCRIPT_PATH=$(pwd)
 PARENT_SCRIPT_FOLDER=${PWD%/*}
-CONFIG_FOLDER=$PARENT_SCRIPT_FOLDER/conf_default/config
+CONFIG_FOLDER=$PARENT_SCRIPT_FOLDER/config/current
 
 echo "[INFO] ===== Starting Graphite ===== "
 
