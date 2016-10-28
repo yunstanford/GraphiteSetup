@@ -12,6 +12,9 @@ CONFIG_FOLDER=$PARENT_SCRIPT_FOLDER/conf_default/config
 
 echo "[INFO] ===== Starting Graphite ===== "
 
+mkdir -p /opt/zillow/app_data/zillow-graphite/carbon-relay-ng-1/
+mkdir -p /opt/zillow/app_data/zillow-graphite/carbon-relay-ng-2/
+
 echo "[INFO] == Starting Carbon-Relay-NG =="
 
 $SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng-1.ini > carbon-relay-ng-1-stdout 2> carbon-relay-ng-1-stderr &

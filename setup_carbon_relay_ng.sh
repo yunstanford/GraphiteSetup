@@ -1,4 +1,5 @@
 SCRIPT_PATH=$(pwd)
+GO_INSTALLED=0
 
 go version
 if [ $? != 0 ]; then
@@ -9,7 +10,7 @@ if [ $? != 0 ]; then
   echo "[INFO] ===== GOROOT: where go is installed ===== "
   export GOROOT=$SCRIPT_PATH/go
   export PATH=$PATH:$GOROOT/bin
-  
+  GO_INSTALLED=1
   echo $GOROOT
 fi
 
@@ -44,3 +45,12 @@ make
 
 echo "[INFO] ===== Moving compiled carbon-relay-ng binary to bin folder ===== "
 mv $GOPATH/src/github.com/graphite-ng/carbon-relay-ng/carbon-relay-ng $SCRIPT_PATH/bin/
+
+
+if [ $GO_INSTALLED -eq 1 ]; then 
+  echo "[INFO] ===== Removing Golang as we no more need it ===== "
+  rm -rf $GOROOT
+fi
+
+echo "[INFO] ===== Removing GoCode as we no more need it ===== "
+rm -rf $GOPATH
