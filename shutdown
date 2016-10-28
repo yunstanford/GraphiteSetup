@@ -23,7 +23,7 @@ echo "[INFO] == Carbon-Relay stopped =="
 
 echo "[INFO] == Shutting down Carbon-Cache instances =="
 
-python $SCRIPT_PATH/carbon_cache.py stop $NAMING_FORMATE $CACHE_INSTANCES_NUM
+$SCRIPT_PATH/python $SCRIPT_PATH/carbon_cache.py stop $NAMING_FORMATE $CACHE_INSTANCES_NUM
 
 echo "[INFO] == Carbon-Cache stoped =="
 
