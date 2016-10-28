@@ -1,8 +1,10 @@
 #!/bin/bash
 
 CACHE_INSTANCES_NUM=8
-#RELAY_INSTANCES_NUM=2
+RELAY_INSTANCES_NUM=2
 NAMING_FORMATE="l"
+
+export GRAPHITE_STORAGE_DIR=/opt/zillow/app_data/zillow-graphite/storage
 
 # "/opt/graphite/bin/"
 pushd `dirname $0` > /dev/null
