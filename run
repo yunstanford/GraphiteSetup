@@ -14,13 +14,15 @@ CONFIG_FOLDER=$PARENT_SCRIPT_FOLDER/conf_default/config
 
 echo "[INFO] ===== Starting Graphite ===== "
 
-mkdir -p /opt/zillow/app_data/zillow-graphite/carbon-relay-ng-1/
-mkdir -p /opt/zillow/app_data/zillow-graphite/carbon-relay-ng-2/
+CARBON_RELAY_NG_LOG="/opt/zillow/app_data/zillow-graphite/log/carbon-relay-ng/"
+mkdir -p /opt/zillow/app_data/zillow-graphite/storage/carbon-relay-ng-1/
+mkdir -p /opt/zillow/app_data/zillow-graphite/storage/carbon-relay-ng-2/
+mkdir -p $CARBON_RELAY_NG_LOG
 
 echo "[INFO] == Starting Carbon-Relay-NG =="
 
-$SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng-1.ini > carbon-relay-ng-1-stdout 2> carbon-relay-ng-1-stderr &
-$SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng-2.ini > carbon-relay-ng-2-stdout 2> carbon-relay-ng-2-stderr &
+$SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng-1.ini > $CARBON_RELAY_NG_LOG/carbon-relay-ng-1-stdout 2> $CARBON_RELAY_NG_LOG/carbon-relay-ng-1-stderr &
+$SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng-2.ini > $CARBON_RELAY_NG_LOG/carbon-relay-ng-2-stdout 2> $CARBON_RELAY_NG_LOG/carbon-relay-ng-2-stderr &
 
 #echo "[INFO] == Starting Carbon-Relay =="
 
