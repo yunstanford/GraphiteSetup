@@ -7,36 +7,36 @@ NAMING_FORMATE="l"
 # "/opt/graphite/bin/"
 pushd `dirname $0` > /dev/null
 SCRIPT_PATH=$(pwd)
-PARENT_SCRIPT_FOLDER=${PWD%/*}
-CONFIG_FOLDER=$PARENT_SCRIPT_FOLDER/config/current/carbon
-
-
-# Specify graphite storage dir and graphite conf dir
-export GRAPHITE_STORAGE_DIR=/opt/zillow/app_data/zillow-graphite/storage
-export GRAPHITE_CONF_DIR=$CONFIG_FOLDER
+# PARENT_SCRIPT_FOLDER=${PWD%/*}
+# CONFIG_FOLDER=$PARENT_SCRIPT_FOLDER/config/current/carbon
 
 
 echo "[INFO] ===== Starting Graphite ===== "
 
-CARBON_RELAY_NG_LOG="/opt/zillow/app_data/zillow-graphite/log/carbon-relay-ng/"
-mkdir -p /opt/zillow/app_data/zillow-graphite/storage/carbon-relay-ng-1/
-mkdir -p /opt/zillow/app_data/zillow-graphite/storage/carbon-relay-ng-2/
-mkdir -p $CARBON_RELAY_NG_LOG
 
-echo "[INFO] == Starting Carbon-Relay-NG =="
+# This Part is for Carbon relay ng
+##############################################
+# CARBON_RELAY_NG_LOG="/opt/zillow/app_data/zillow-graphite/log/carbon-relay-ng/"
+# mkdir -p /opt/zillow/app_data/zillow-graphite/storage/carbon-relay-ng-1/
+# mkdir -p /opt/zillow/app_data/zillow-graphite/storage/carbon-relay-ng-2/
+# mkdir -p $CARBON_RELAY_NG_LOG
 
-$SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng-1.ini > $CARBON_RELAY_NG_LOG/carbon-relay-ng-1-stdout 2> $CARBON_RELAY_NG_LOG/carbon-relay-ng-1-stderr &
-$SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng-2.ini > $CARBON_RELAY_NG_LOG/carbon-relay-ng-2-stdout 2> $CARBON_RELAY_NG_LOG/carbon-relay-ng-2-stderr &
+# echo "[INFO] == Starting Carbon-Relay-NG =="
 
-#echo "[INFO] == Starting Carbon-Relay =="
+# $SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng-1.ini > $CARBON_RELAY_NG_LOG/carbon-relay-ng-1-stdout 2> $CARBON_RELAY_NG_LOG/carbon-relay-ng-1-stderr &
+# $SCRIPT_PATH/carbon-relay-ng $CONFIG_FOLDER/carbon-relay-ng-2.ini > $CARBON_RELAY_NG_LOG/carbon-relay-ng-2-stdout 2> $CARBON_RELAY_NG_LOG/carbon-relay-ng-2-stderr &
+###############################################
 
-#python $SCRIPT_PATH/carbon_relay.py start $NAMING_FORMATE $RELAY_INSTANCES_NUM 
+
+echo "[INFO] == Starting Carbon-Relay =="
+
+python $SCRIPT_PATH/carbon_relay.py start $NAMING_FORMATE $RELAY_INSTANCES_NUM 
 
 echo "[INFO] == Carbon-Relay Started =="
 
 echo "[INFO] == Starting Carbon-Cache =="
 
-$SCRIPT_PATH/python $SCRIPT_PATH/carbon_cache.py start $NAMING_FORMATE $CACHE_INSTANCES_NUM
+python $SCRIPT_PATH/carbon_cache.py start $NAMING_FORMATE $CACHE_INSTANCES_NUM
 
 echo "[INFO] == Carbon-Cache Started =="
 
