@@ -30,13 +30,21 @@ export PATH=$PATH:$GOPATH/bin
 echo $PATH
 
 
-mkdir -p $GOPATH/src/github.com/graphite-ng/
+export GRAPHITE_NG=$GOPATH/src/github.com/graphite-ng/
+mkdir -p $GRAPHITE_NG
 mkdir -p /tmp/carbon-relay-ng/spool
 
 
 echo "[INFO] ===== Cloning carbon-relay-ng ===== "
+if [ -d $GRAPHITE_NG ]; then 
+  echo "[INFO] ===== Removing GRAPHITE_NG directory ===== "
+  rm -rf $GRAPHITE_NG
+  echo "[INFO] ===== Creating GRAPHITE_NG directory ===== "
+  mkdir -p $GRAPHITE_NG
+fi
+
 git clone git@github.com:zillow/carbon-relay-ng.git
-mv carbon-relay-ng $GOPATH/src/github.com/graphite-ng/
+mv carbon-relay-ng $GRAPHITE_NG
 
 echo "[INFO] ===== Cloning go-bindata ===== "
 go get github.com/jteeuwen/go-bindata/...
