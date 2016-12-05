@@ -30,13 +30,14 @@ export PATH=$PATH:$GOPATH/bin
 echo $PATH
 
 
-mkdir -p $GOPATH
+mkdir -p $GOPATH/src/github.com/graphite-ng/
 mkdir -p /tmp/carbon-relay-ng/spool
 
 
 echo "[INFO] ===== Cloning carbon-relay-ng ===== "
 git clone git@github.com:zillow/carbon-relay-ng.git
-mv carbon-relay-ng $GOPATH/
+mv carbon-relay-ng $GOPATH/src/github.com/graphite-ng/
+
 echo "[INFO] ===== Cloning go-bindata ===== "
 go get github.com/jteeuwen/go-bindata/...
 
