@@ -43,7 +43,7 @@ if [ -d $GRAPHITE_NG ]; then
   mkdir -p $GRAPHITE_NG
 fi
 
-git clone git@github.com:zillow/carbon-relay-ng.git
+git clone https://github.com/zillow/carbon-relay-ng.git
 mv carbon-relay-ng $GRAPHITE_NG
 
 echo "[INFO] ===== Cloning go-bindata ===== "
