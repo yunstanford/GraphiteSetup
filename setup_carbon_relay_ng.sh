@@ -36,6 +36,7 @@ mkdir -p /tmp/carbon-relay-ng/spool
 
 echo "[INFO] ===== Cloning carbon-relay-ng ===== "
 git clone git@github.com:zillow/carbon-relay-ng.git
+mv carbon-relay-ng $GOPATH/
 echo "[INFO] ===== Cloning go-bindata ===== "
 go get github.com/jteeuwen/go-bindata/...
 
